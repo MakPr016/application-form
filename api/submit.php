@@ -1,7 +1,6 @@
 <?php
-session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $_SESSION['form_data'] = [
+    $formData = [
         'name' => $_POST['name'] ?? '',
         'email' => $_POST['email'] ?? '',
         'phone' => $_POST['phone'] ?? '',
@@ -10,7 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'skills' => $_POST['skills'] ?? ''
     ];
     
-    header("Location: /api/response.php");
+    $encodedData = base64_encode(json_encode($formData));
+    header("Location: /api/response.php?data=" . urlencode($encodedData));
     exit();
 } else {
     header("Location: /");

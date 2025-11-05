@@ -1,10 +1,10 @@
 <?php
-session_start();
-if (!isset($_SESSION['form_data'])) {
-    header("Location: index.html");
+if (isset($_GET['data'])) {
+    $data = json_decode(base64_decode($_GET['data']), true);
+} else {
+    header("Location: /");
     exit();
 }
-$data = $_SESSION['form_data'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -169,7 +169,7 @@ $data = $_SESSION['form_data'];
     </div>
 
     <div class="actions">
-      <a href="./index.html" class="btn-secondary">← Register Another</a>
+      <a href="/" class="btn-secondary">← Register Another</a>
       <button onclick="window.print()" class="btn-primary">Print Details</button>
     </div>
   </div>
