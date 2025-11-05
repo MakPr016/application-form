@@ -15,7 +15,7 @@
       <p>Join our community today</p>
     </div>
     
-    <form id="regForm" method="POST" action="submit.php">
+    <form id="regForm" method="POST" action="/api/submit.php">
       <div class="form-group">
         <label for="name">Full Name</label>
         <input type="text" name="name" id="name" placeholder="Enter your full name" required />
