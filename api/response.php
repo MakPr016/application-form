@@ -15,14 +15,14 @@ if (isset($_GET['data'])) {
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f9f5f0;
+      --bg: #f0f2f7;
       --card: #ffffff;
-      --muted: #766c5e;
-      --accent: #e07947;
-      --accent-light: #f0a479;
-      --text-dark: #2d2620;
-      --border: #e8dfd5;
-      --success: #7fb069;
+      --muted: #6b7280;
+      --accent: #4338ca;
+      --accent-light: #6366f1;
+      --text-dark: #1f2937;
+      --border: #e5e7eb;
+      --success: #059669;
     }
 
     * {
@@ -47,7 +47,7 @@ if (isset($_GET['data'])) {
       background: var(--card);
       padding: 40px;
       border-radius: 16px;
-      box-shadow: 0 2px 12px rgba(45, 38, 32, 0.06);
+      box-shadow: 0 2px 12px rgba(31, 41, 55, 0.08);
       border: 1px solid var(--border);
       text-align: center;
     }
@@ -55,7 +55,7 @@ if (isset($_GET['data'])) {
     .success-icon {
       width: 80px;
       height: 80px;
-      background: rgba(127, 176, 105, 0.15);
+      background: rgba(5, 150, 105, 0.15);
       border: 2px solid var(--success);
       border-radius: 50%;
       display: flex;
@@ -82,7 +82,7 @@ if (isset($_GET['data'])) {
     .info {
       margin: 28px 0;
       text-align: left;
-      background: rgba(224, 121, 71, 0.04);
+      background: rgba(67, 56, 202, 0.04);
       padding: 20px;
       border-radius: 10px;
       border: 1px solid var(--border);
@@ -138,7 +138,7 @@ if (isset($_GET['data'])) {
     .btn-primary:hover {
       background: var(--accent-light);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(224, 121, 71, 0.3);
+      box-shadow: 0 6px 20px rgba(67, 56, 202, 0.3);
     }
 
     .btn-secondary {
@@ -149,7 +149,24 @@ if (isset($_GET['data'])) {
 
     .btn-secondary:hover {
       border-color: var(--accent);
-      background: rgba(224, 121, 71, 0.04);
+      background: rgba(67, 56, 202, 0.04);
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .box {
+        box-shadow: none;
+        border: none;
+        max-width: 100%;
+      }
+
+      .actions {
+        display: none;
+      }
     }
   </style>
 </head>
